@@ -15,7 +15,7 @@ if (articulo == ""){
 let producto = prompt(
     "ingresa una opción \n 1- Cuaderno \n 2- Bases de madera \n 3- Láminas \n 4- Libros craft \n 5- Acuarelas"
 );
-
+while(producto != "salir"){
 switch(producto){
     case "1":
     alert("Has seleccionado el producto Cuaderno");
@@ -32,4 +32,11 @@ switch(producto){
     case "5":
     alert("Has seleccionado el producto Acuarelas");
     break
+}
+
+producto = prompt(
+    "ingresa una opción \n 1- Cuaderno \n 2- Bases de madera \n 3- Láminas \n 4- Libros craft \n 5- Acuarelas"
+);
+if(producto == "salir") alert("Gracias, que tengas un buen día");
+
 }
