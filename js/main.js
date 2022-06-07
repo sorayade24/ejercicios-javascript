@@ -1,4 +1,4 @@
-//condicional con if, ejercicio a)
+/*//condicional con if, ejercicio a)
 
  let articulo = prompt("ingresa el artículo");
 
@@ -41,7 +41,7 @@ producto = prompt(
 if(producto == "salir") alert("Gracias, que tengas un buen día");
 
 } 
-
+*/
 
 //simulador interactivo precio con IVA 21%, ejercicio c)
 
@@ -82,7 +82,7 @@ switch(producto2){
 }
 
 producto2 = prompt(
-    "ingresa una opción \n 1- Cuaderno \n 2- Bases de madera \n 3- Láminas \n 4- Libros craft \n 5- Acuarelas"
+    "ingresa una opción. Para salir ingresa SALIR \n 1- Cuaderno \n 2- Bases de madera \n 3- Láminas \n 4- Libros craft \n 5- Acuarelas"
 );
 if(producto2 == "SALIR") alert("Gracias, que tengas un buen día");
 
