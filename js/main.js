@@ -1,4 +1,5 @@
-/*//condicional con if, ejercicio a)
+/*
+//condicional con if, ejercicio a)
 
  let articulo = prompt("ingresa el artículo");
 
@@ -41,10 +42,8 @@ producto = prompt(
 if(producto == "salir") alert("Gracias, que tengas un buen día");
 
 } 
-*/
 
 //simulador interactivo precio con IVA 21%, ejercicio c)
-
 
 const IVA = 0.21;
 let precioUno = 20;
@@ -86,4 +85,21 @@ producto2 = prompt(
 );
 if(producto2 == "SALIR") alert("Gracias, que tengas un buen día");
 
+}
+*/
+
+
+//arrays - productos con mismo precio + IVA - imprimir en consola
+
+const precioBase = 20;
+const IVA = 0.21;
+let resultado = precioBase * IVA + precioBase;
+
+const productos =  [{id: 1, producto: "Láminas"}, 
+{id: 2, producto: "Blocs de dibujo"},
+{id: 3, producto: "Acuarelas"}];
+
+for (const producto of productos){
+    console.log("El id del producto es " + producto.id);
+    console.log("El producto " + producto.producto + " tiene un precio de " + resultado + "€ IVA incl.");
 }
