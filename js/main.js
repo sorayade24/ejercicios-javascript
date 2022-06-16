@@ -141,13 +141,13 @@ switch(producto2){
     alert("Has selecionado el producto Bases de madera y su precio es " + resultado + "€"+ " en color " + productoColor[4].color + " y " + resultado2 + "€" + " en color " + productoColor[3].color);
     break
     case "3":
-    alert("Has seleccionado el producto Láminas y su precio es " + resultado + "€" + "en color " + productoColor[2].color);
+    alert("Has seleccionado el producto Láminas y su precio es " + resultado + "€" + " en color " + productoColor[2].color);
     break
     case "4":
-    alert("Has seleccionado el producto Libros Craft y su precio es " + resultado + "€" + "en color " + productoColor[5].color);
+    alert("Has seleccionado el producto Libros Craft y su precio es " + resultado + "€" + " en color " + productoColor[3].color);
     break
     case "5":
-    alert("Has seleccionado el producto Acuarelas y su precio es " + resultado + "€" + color.id+ "en color " + productoColor[3].color);
+    alert("Has seleccionado el producto Acuarelas y su precio es " + resultado + "€" + " en color " + productoColor[3].color);
     break
     default:
         alert("opción no válida");
@@ -156,7 +156,7 @@ switch(producto2){
 producto2 = prompt(
     "ingresa una opción. Para salir ingresa SALIR \n 1- Cuaderno \n 2- Bases de madera \n 3- Láminas \n 4- Libros craft \n 5- Acuarelas"
 );
-if(producto2 == "SALIR") alert("Gracias, que tengas un buen día. A continuación, te mostramos nuestra oferta de cartulinas por consola");
+if(producto2 == "SALIR") alert("Gracias, que tengas un buen día.");
 
 }
 
