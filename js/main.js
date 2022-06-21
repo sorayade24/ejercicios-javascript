@@ -159,7 +159,7 @@ if(producto2 == "SALIR") alert("Gracias, que tengas un buen día.");
 
 }
 
-*/
+
 
 class producto {
     constructor(nombre, precio, detalle, cantidad){
@@ -197,14 +197,14 @@ do{
         arrayProductos.push(new producto(nombreP, precioP, detalleP, cantidadP));
     }
 }
-while(comprobacion != "SALIR" || comprobacion != "salir" || comprobacion != "Salir")
+while(comprobacion != "SALIR" || comprobacion != "salir" || comprobacion != "Salir");
 console.log(arrayProductos);
 
 for (let producto of arrayProductos){
     let contenedor = document.createElement("div");
 
     contenedor.innerHTML = 
-    `<h3> Nombre: $(producto.nombre)</h3>
+    `<h3> Nombre: $¨producto.nombre)</h3>
     <p> Precio € : $(producto.precio)</p>
     <p> Cantidad: $(producto.cantidad)</p>
     <p> Detalle: $(producto.detalle)</p>`;
@@ -225,3 +225,55 @@ contenedor.innerHTML = `<h3> Nombre: $(producto.nombre)</h3>
 <p> Detalle: $(producto.detalle)</p>`;
 document.body.appendChild(contenedor);
 }
+*/
+
+class producto {
+    constructor(nombre, precio, detalle, cantidad) {
+      this.nombre = nombre;
+      this.precio = parseInt(precio);
+      this.detalle = detalle;
+      this.cantidad = cantidad;
+      this.disponible = true;
+    }
+
+    sumarIva() {
+      return this.precio * 1.21;
+    }
+    vender() {
+      this.disponible = false;
+    }
+
+    precioSugerido() {
+      return this.precio * 1.21 * 1.25;
+    }
+  }
+
+  let arrayProductos = [];
+
+  do {
+    // Comprobación puede ser una constante porque una ves que el prompt retorna no cambia el valor
+    const comprobacion = prompt("Ingresa el nombre del producto o SALIR para finalizar");
+
+    // Lo pongo en una linea para no ocupar mucho espacio
+    if (comprobacion === "SALIR" || comprobacion === "salir" || comprobacion === "Salir") { break; }
+
+    // Sacamos el else porque al final es un poco inutil, si entra en el if se corta el ciclo así que la unica manera
+    // de que pueda llegar a las instrucciones que estan abajo es que el codigo no entre al if, por consecuente no muera el ciclo
+    nombreP = comprobacion;
+    let precioP = prompt("Ingresa el precio del producto");
+    let detalleP = prompt("Ingresa el detalle del producto");
+    let cantidadP = prompt("Ingresa la cantidad del producto");
+    arrayProductos.push(new producto(nombreP, precioP, detalleP, cantidadP));
+  } while (true)
+
+  for (let producto of arrayProductos) {
+    let contenedor = document.createElement("div");
+
+    contenedor.innerHTML = `<h3> Nombre: ${producto.nombre}</h3>
+    <p> Precio € : ${producto.precio}</p>
+    <p> Cantidad: ${producto.cantidad}</p>
+    <p> Detalle: ${producto.detalle}</p>`;
+    document.body.appendChild(contenedor);
+  }
+
+  console.log(arrayProductos);
