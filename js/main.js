@@ -102,7 +102,6 @@ for (const producto of productos){
     console.log("El id del producto es " + producto.id);
     console.log("El producto " + producto.producto + " tiene un precio de " + resultado + "€ IVA incl.");
 }
-*/
 
 
 //Primera entrega proyecto final
@@ -160,3 +159,69 @@ if(producto2 == "SALIR") alert("Gracias, que tengas un buen día.");
 
 }
 
+*/
+
+class producto {
+    constructor(nombre, precio, detalle, cantidad){
+this.nombre = nombre;
+this.precio = parseInt(precio);
+this.detalle = detalle;
+this.cantidad = cantidad;
+this.disponible = true;
+}
+
+sumarIva(){
+    return this.precio * 1.21;
+}
+vender(){
+    this.disponible = false;
+}
+
+precioSugerido(){
+    return this.precio *1.21 * 1.25;
+}
+
+}
+
+let arrayProductos = [];
+
+do{
+    let comprobacion = prompt ("Ingresa el nombre del producto o SALIR para finalizar");   
+    if (comprobacion === "SALIR" || comprobacion === "salir" || comprobacion === "Salir"){
+        break;
+    }else{
+        nombreP = comprobacion;
+        let precioP = prompt("Ingresa el precio del producto");
+        let detalleP = prompt ("Ingresa el detalle del producto");
+        let cantidadP = prompt("Ingresa la cantidad del producto");
+        arrayProductos.push(new producto(nombreP, precioP, detalleP, cantidadP));
+    }
+}
+while(comprobacion != "SALIR" || comprobacion != "salir" || comprobacion != "Salir")
+console.log(arrayProductos);
+
+for (let producto of arrayProductos){
+    let contenedor = document.createElement("div");
+
+    contenedor.innerHTML = 
+    `<h3> Nombre: $(producto.nombre)</h3>
+    <p> Precio € : $(producto.precio)</p>
+    <p> Cantidad: $(producto.cantidad)</p>
+    <p> Detalle: $(producto.detalle)</p>`;
+    document.body.appendChild(contenedor);
+}
+
+let sinStock = arrayProductos.filter(producto => producto.cantidad == 0 || producto.disponible == false);
+console.log (sinStock);
+document.write("<h3> Lista de Productos sin Stock (cantidad = 0 o disponible = false): </h3>");
+for(let producto of sinStock){
+
+document.write("<h3>Lista de Productos con poco Stock (menos de 3 unidades): </h3>");
+let contenedor = document.createElement("div");
+
+contenedor.innerHTML = `<h3> Nombre: $(producto.nombre)</h3>
+<p> Precio € : $(producto.precio)</p>
+<p> Cantidad: $(producto.cantidad)</p>
+<p> Detalle: $(producto.detalle)</p>`;
+document.body.appendChild(contenedor);
+}
