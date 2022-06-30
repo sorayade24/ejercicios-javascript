@@ -225,7 +225,7 @@ contenedor.innerHTML = `<h3> Nombre: $(producto.nombre)</h3>
 <p> Detalle: $(producto.detalle)</p>`;
 document.body.appendChild(contenedor);
 }
-*/
+
 
 class producto {
     constructor(nombre, precio, detalle, cantidad) {
@@ -276,4 +276,83 @@ class producto {
     document.body.appendChild(contenedor);
   }
 
-  console.log(arrayProductos);
+  console.log(arrayProductos);*/
+
+
+//segunda entrega login - Registro con JSON y localStorage
+
+myFunction();
+function myFunction(){
+    console.log("my function")
+}
+
+
+
+let mi_funcion = function(){
+    console.log("mi función");
+}
+
+mi_funcion();
+
+let otra_funcion = () => console.log("otra función");
+
+otra_funcion();
+
+//----
+
+let main = function(){
+    captura_boton();
+}
+
+let captura_boton= function(){
+    document.querySelector(".myButton input").setAttribute("onclick","dataRead()");
+}
+
+let dataRead = function(){
+    console.log("Intentaremos ller los datos del formulario");
+console.log(
+    document.querySelector("#nombre").value, 
+    document.querySelector("#apellido").value, 
+    document.querySelector("#email").value, 
+    document.querySelector("#pass").value, 
+);
+
+let myObject = {
+   nombre: document.querySelector("#nombre").value, 
+    apellido:document.querySelector("#apellido").value, 
+   email:document.querySelector("#email").value, 
+   pass: document.querySelector("#pass").value, 
+}
+
+
+
+console.log(myObject);
+console.log(JSON.stringify(myObject));
+save_localStorage(myObject);
+}
+
+let save_localStorage = function(myObj){
+    localStorage.setItem("miInfo", JSON.stringify(myObj));
+}
+
+let read_localStorage = function(){
+    let miInfo = localStorage.getItem("miInfo");
+    console.log(miInfo);
+    let myObject = JSON.parse(miInfo);
+    console.log(myObject);
+    document.querySelector("#nombre").value = myObject.nombre; 
+    document.querySelector("#apellido").value = myObject.apellido; 
+    document.querySelector("#email").value = myObject.email; 
+    document.querySelector("#pass").value = myObject.pass; 
+}
+
+let reset = function(){
+    document.querySelector("#nombre").value = "";
+    document.querySelector("#apellido").value = "";
+    document.querySelector("#email").value = "";
+    document.querySelector("#pass").value = "";
+
+}
+
+
+main();
