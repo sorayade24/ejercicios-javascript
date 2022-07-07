@@ -276,7 +276,7 @@ class producto {
     document.body.appendChild(contenedor);
   }
 
-  console.log(arrayProductos);*/
+  console.log(arrayProductos);
 
 
 //segunda entrega login - Registro con JSON y localStorage
@@ -309,7 +309,7 @@ let captura_boton= function(){
 }
 
 let dataRead = function(){
-    console.log("Intentaremos ller los datos del formulario");
+    console.log("Intentaremos leer los datos del formulario");
 console.log(
     document.querySelector("#nombre").value, 
     document.querySelector("#apellido").value, 
@@ -356,3 +356,7 @@ let reset = function(){
 
 
 main();
+
+*/
+
+//fetch y ajax∫
