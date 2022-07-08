@@ -277,7 +277,7 @@ class producto {
   }
 
   console.log(arrayProductos);
-
+*/
 
 //segunda entrega login - Registro con JSON y localStorage
 
@@ -357,6 +357,17 @@ let reset = function(){
 
 main();
 
-*/
 
-//fetch y ajax∫
+
+document.getElementById('sweetalert').addEventListener('click', function(){
+
+    swal({
+        title: 'Añadido al carrito',
+        text: "El artículo se ha añadido a tu carrito",
+        type: 'success',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'OK!'
+      })
+  
+    });
+
